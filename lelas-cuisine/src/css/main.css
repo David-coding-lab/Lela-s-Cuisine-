@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#root nav {
+  width: flex;
+  height: 110px;
+  display: flex;
+  justify-content: space-between;
+  padding: 21px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+#root .searchLabel {
+  width: 150px;
+  height: 20px;
+  padding: 10px;
+  justify-content: center;
+  align-content: center;
+  display: flex;
+  background-color: #F5F5F5;
+  border-radius: 54px;
+  margin-top: auto;
+}
+#root .searchLabel input {
+  border: none;
+  width: 130px;
+  background-color: inherit;
+  color: rgba(0, 0, 0, 0.25);
+  outline: transparent;
+  padding-left: 5px;
+  padding-top: 5px;
+  font-family: "Mogra";
+}
+#root .searchLabel img {
+  cursor: pointer;
+}
+#root .logo_links {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+#root .logo_links .Logo a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font: 25px "Leckerli One";
+  text-decoration: none;
+  color: #DB0909;
+}
+#root .logo_links ul {
+  display: flex;
+  width: 457px;
+  justify-content: space-evenly;
+}
+#root .logo_links ul li {
+  list-style-type: none;
+  font: 17px "Mogra";
+}
+#root .logo_links ul li a {
+  text-decoration: none;
+  color: #777777;
+}
+#root .nav_extras {
+  margin-top: auto;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+#root .nav_extras a {
+  margin-right: 30px;
+  text-decoration: none;
+  color: rgba(54, 54, 54, 0.72);
+  font: 15px "Mogra";
+}
+#root .nav_extras button {
+  width: 33px;
+  height: 33px;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 50%;
+}
+#root .nav_extras button img {
+  width: inherit;
+}
+#root .carousel {
+  max-width: 95vw;
+  height: auto;
+  margin-inline: 21px;
+  margin-top: 35px;
+  display: flex;
+  padding: 10px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  overscroll-behavior-inline: contain;
+}
+#root .carousel .foodMenu {
+  min-width: 335px;
+  height: 390px;
+  margin: 10px;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  color: #DB0909;
+  font: 25px "Mogra";
+  scroll-snap-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+#root .carousel .foodMenu:hover {
+  color: #fff;
+}
+#root .carousel .menu_loading {
+  align-items: center;
+  background-color: #EDEDED;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+  cursor: default;
+}
+#root .carousel .menu_loading img {
+  animation: 2s ease-in-out alternate infinite breath;
+}
+#root .ads {
+  width: flex;
+  height: 102px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #C52A2A;
+  color: #fff;
+  font: 15px "Mada";
+}/*# sourceMappingURL=main.css.map */

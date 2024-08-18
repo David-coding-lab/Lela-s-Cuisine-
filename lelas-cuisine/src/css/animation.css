@@ -1,0 +1,11 @@
+@keyframes breath {
+  0% {
+    width: 30px;
+  }
+  50% {
+    width: 50%;
+  }
+  100% {
+    width: 25%;
+  }
+}/*# sourceMappingURL=animation.css.map */

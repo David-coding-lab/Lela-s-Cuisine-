@@ -1,0 +1,142 @@
+$primary-color-logo: #DB0909
+$primary-color-2: #554A4A
+$nav-txt-focus: #9B9B9B
+$nav-txt: rgba(54, 54, 54, 0.72)
+$secondary-color: #C52A2A
+$notification-color: #E31B1B
+$checkOut-title-color: #6E6E6E
+$checkOut-items-color: #9B9B9B
+$checkOut-txt-color: #777777
+$focus-color: #00A3FF
+$logo-font: 'Leckerli One'
+$txt-Font1: 'Mogra'
+$txt-font2: 'Mada'
+$txt-font3: 'Kotta One'
+$txt-font4: 'Inria Sans'
+$heading-size1: 25px
+$heading-size2: 20px
+$txt-size1: 17px
+$txt-size2: 15px
+$txt-size3: 12px
+*
+    margin: 0
+    padding: 0
+
+#root
+    nav
+        width: flex
+        height: 110px
+        display: flex
+        justify-content: space-between
+        padding: 21px
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04)
+    .searchLabel
+        width: 150px
+        height: 20px
+        padding: 10px
+        justify-content: center
+        align-content: center
+        display: flex
+        background-color: #F5F5F5
+        border-radius: 54px
+        margin-top: auto
+        input
+            border: none
+            width: 130px
+            background-color: inherit
+            color: rgba(0, 0, 0, 0.25)
+            outline: transparent
+            padding-left: 5px
+            padding-top: 5px
+            font-family: $txt-Font1
+        img
+            cursor: pointer
+    .logo_links
+        display: flex
+        flex-direction: column
+        justify-content: start
+        align-items: center
+        .Logo a
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            font: $heading-size1 $logo-font
+            text-decoration: none
+            color: $primary-color-logo
+        ul
+            display: flex
+            width: 457px
+            justify-content: space-evenly
+            li
+                list-style-type: none
+                font: $txt-size1 $txt-Font1
+                a
+                    text-decoration: none
+                    color: $checkOut-txt-color
+    .nav_extras
+        margin-top: auto
+        display: flex
+        justify-content: end
+        align-items: center
+        a
+            margin-right: 30px
+            text-decoration: none
+            color: $nav-txt
+            font: $txt-size2 $txt-Font1
+        button
+            width: 33px
+            height: 33px
+            border: none
+            background-color: #fff
+            cursor: pointer
+            border-radius: 50%
+            img
+                width: inherit
+    .carousel
+        max-width: 95vw
+        height: auto
+        margin-inline: 21px
+        margin-top: 35px
+        display: flex
+        padding: 10px
+        overflow-x: auto
+        scroll-snap-type: x mandatory
+        scrollbar-width: thin
+        overscroll-behavior-inline: contain
+        .foodMenu
+            min-width: 335px
+            height: 390px
+            margin: 10px
+            padding: 50px
+            border-radius: 10px
+            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25)
+            color: $primary-color-logo
+            font: $heading-size1 $txt-Font1
+            scroll-snap-align: center
+            display: flex
+            justify-content: center
+            align-items: flex-end
+            border: none
+            background-position: center
+            background-repeat: no-repeat
+            background-size: cover
+            cursor: pointer
+            &:hover
+                color: #fff
+        .menu_loading
+            align-items: center
+            background-color: #EDEDED
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25)
+            cursor: default
+            img
+                animation: 2s ease-in-out alternate infinite breath
+    .ads
+        width: flex
+        height: 102px
+        display: flex
+        justify-content: center
+        align-items: center
+        background-color: #C52A2A
+        color: #fff
+        font: $txt-size2 $txt-font2
