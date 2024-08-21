@@ -62,6 +62,10 @@
 #root .logo_links ul li a {
   text-decoration: none;
   color: #777777;
+  transition: color 0.2s ease-in-out;
+}
+#root .logo_links ul li a:hover {
+  color: #9B9B9B;
 }
 #root .nav_extras {
   margin-top: auto;
@@ -116,6 +120,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
+  transition: 0.3s ease-out color;
 }
 #root .carousel .foodMenu:hover {
   color: #fff;
@@ -135,7 +140,140 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #C52A2A;
   color: #fff;
   font: 15px "Mada";
+  background-color: #C52A2A;
+}
+#root .subMenu {
+  padding-top: 20px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+#root .subMenu .subDishesContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+  place-content: center;
+}
+#root .subMenu .loading-dishes {
+  background-color: #e4e4e4;
+  animation-delay: 1s;
+  animation-duration: 1.5s;
+}
+#root .subMenu .loading-dishes .loading-dishes-box1, #root .subMenu .loading-dishes .loading-dishes-box2 {
+  margin: 20px;
+  width: 310px;
+  height: 200px;
+  background-color: #dadada;
+  animation: 1s ease-in-out infinite blink;
+}
+#root .subMenu .loading-dishes .loading-dishes-box2 {
+  width: 200px;
+  height: 20px;
+  margin: 10px;
+  margin-left: 20px;
+}
+#root .subMenu .dishCard, #root .subMenu .loading-dishes {
+  width: 350px;
+  height: 300px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+#root .subMenu .dishCard .dishImage, #root .subMenu .loading-dishes .dishImage {
+  width: flex;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#root .subMenu .dishCard .dishDetails, #root .subMenu .loading-dishes .dishDetails {
+  height: inherit;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font: 17px "Mada";
+}
+#root .subMenu .dishCard .dishDetails .dishPrices, #root .subMenu .loading-dishes .dishDetails .dishPrices {
+  font: 17px "Inria Sans";
+  display: flex;
+  justify-content: space-evenly;
+  width: 90px;
+}
+#root .subMenu .dishCard .dishDetails .dishPrices .dishOriginalPrice, #root .subMenu .loading-dishes .dishDetails .dishPrices .dishOriginalPrice {
+  text-decoration-line: line-through;
+  color: #9B9B9B;
+}
+#root .subMenu .dishCard .dishDetails .addButton, #root .subMenu .loading-dishes .dishDetails .addButton {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+#root .subMenu button {
+  width: 200px;
+  height: 50px;
+  border: none;
+  background-color: #DB0909;
+  color: #fff;
+  border-radius: 25px;
+  margin: auto;
+  font: 17px "Leckerli One";
+  cursor: pointer;
+  transition: 0.3s ease-out background-color, 0.3s ease-out color;
+}
+#root .subMenu button:hover {
+  background-color: #fff;
+  color: #DB0909;
+  border: 1px solid #DB0909;
+}
+#root .nutritious-fact_section {
+  width: flex;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#root .nutritious-fact_section .loading-facts {
+  background-color: #c2c2c2;
+  border-radius: 10px;
+  animation: 2.5s ease-in-out infinite blink;
+}
+#root .nutritious-fact_section .loading-facts .loading-facts-box {
+  width: 500px;
+  height: 20px;
+  background-color: #ececec;
+  border-radius: 10px;
+  margin: auto;
+  margin-block: 30px;
+  animation: 1.5s ease-in-out infinite blink;
+}
+#root .nutritious-fact_section .facts-container, #root .nutritious-fact_section .loading-facts {
+  width: 554px;
+  height: 500px;
+  overflow: hidden;
+}
+#root .nutritious-fact_section .facts-container h1, #root .nutritious-fact_section .loading-facts h1 {
+  font: 40px "Leckerli One";
+  color: #DB0909;
+  margin-block: 17px;
+}
+#root .nutritious-fact_section .facts-container .facts, #root .nutritious-fact_section .loading-facts .facts {
+  font: 20px "Kotta One";
+  line-height: 60px;
+}
+#root .nutritious-fact_section .facts-container .animateFacts, #root .nutritious-fact_section .loading-facts .animateFacts {
+  pointer-events: none;
+  animation: 1s ease-in-out scrollLeft;
+}
+#root .nutritious-fact_section .facts-container .dots, #root .nutritious-fact_section .loading-facts .dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#root .nutritious-fact_section .facts-container .dots img, #root .nutritious-fact_section .loading-facts .dots img {
+  margin-inline: 10px;
+  cursor: pointer;
 }/*# sourceMappingURL=main.css.map */

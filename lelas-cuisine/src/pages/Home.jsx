@@ -2,7 +2,12 @@ import React, { useEffect, useState } from 'react'
 import Nav from '../components/Nav'
 import {createClient} from 'contentful'
 import logo from '../assets/chef-hat.png'
-function Home() {
+import Dish from '../components/Dish'
+import man from '../assets/man.png'
+import NutritiousFacts from '../components/NutritiousFacts'
+import DishesLoading from '../components/DishesLoading'
+import LoadingFacts from '../components/LoadingFacts'
+function Home({dishesAvailable}) {
   const [foodMenu, setFoodMenu] = useState([])
   const [loading,setLoading] = useState('')
   const [menuNames, setMenuNames] = useState([])
@@ -16,7 +21,7 @@ function Home() {
       content_type: 'dishesSections'
     })
       .then(data=> {
-        setFoodMenu(data.items)
+        setFoodMenu(shuffleArray(data.items))
         for(const foodType of data.items){
           setMenuNames(previous =>{return[
             ...previous,
@@ -25,10 +30,15 @@ function Home() {
         }
         setTimeout(() => {
           setLoading(false)
-        }, 2000);
+        }, 2500);
       })
-      .catch(error=> console.log(error));
+      .catch(error=> console.error(error));
     },[])
+    useEffect(()=>{
+      setTimeout(() => {
+        setDisplayDishes(dishesAvailable.slice(0,6))
+      }, 2000);
+    },[dishesAvailable])
     // menu Component
   const Menu = ({foodType,fooImage})=>{
     return(
@@ -46,9 +56,18 @@ function Home() {
       </button>
     )
   }
+  const [displayDishes,setDisplayDishes] = useState([])
+  const shuffleArray = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+      return array
+    }
+  };
+  shuffleArray(displayDishes)
   return (
     <div>
-        <Nav menuNames={menuNames}/>
+        <Nav menuNames={menuNames[Math.floor(Math.random()*menuNames.length)]}/>
         <section className="carousel">
             {
               loading ?[
@@ -70,7 +89,50 @@ function Home() {
         <div className="ads">
           <h1>2% 0ff on all sales</h1>
         </div>
-        
+        <section className="subMenu">
+          <div className="subDishesContainer">
+            {
+            loading ?
+              [
+                <DishesLoading key={1}/>,
+                <DishesLoading key={2}/>,
+                <DishesLoading key={3}/>,
+                <DishesLoading key={4}/>,
+                <DishesLoading key={5}/>,
+                <DishesLoading key={6}/>
+              ]
+            :dishesAvailable.length > 1 &&
+            <>
+              {displayDishes.map(dish =>((
+                <Dish
+                  dishName={dish.fields.dishName}
+                  dishPrice={dish.fields.dishPrice}
+                  dishImage={dish.fields.dishImage.fields.file.url}
+                  discountPrice={dish.fields.dishDiscountPrice}
+                  key={dish.sys.id}
+                />
+              )))}
+            </>
+          }
+          </div>
+          {
+            !loading &&
+              <a href="/Menu" style={{margin: 'auto'}}>
+                <button>See More</button>
+              </a>
+          }
+        </section>
+        <section className='nutritious-fact_section'>
+          <img src={man} alt="Cartoon Figure" />
+          <article className='facts-container'>
+            <h1>Nutrition Facts</h1>
+            {
+              loading ?
+              <LoadingFacts />
+              :<NutritiousFacts />
+            }
+          </article>
+        </section>
     </div>
   )
 }

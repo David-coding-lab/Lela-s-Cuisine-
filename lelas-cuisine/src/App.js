@@ -5,7 +5,7 @@ import Home from './pages/Home'
 import Menu from './pages/Menu'
 import Order from './pages/Order'
 import About from './pages/About'
-import Nopage from './pages/Nopage'
+import NoPage from './pages/NoPage'
 import Reservation from './pages/Reservation'
 import './css/main.css'
 import './css/responsive.css'
@@ -22,7 +22,7 @@ function App() {
     })
       .then(data=> {
         setDishesAvailable(data.items)})
-      .catch(error=> console.log(error));
+      .catch(error=> console.error(error));
     },[])
   return (
     <Router>
@@ -32,7 +32,7 @@ function App() {
         <Route exact path="/Order" element={<Order />} />
         <Route exact path="/About" element={<About />} />
         <Route exact path="/Reservation" element={<Reservation />} />
-        <Route path="*" element={<Nopage />} />
+        <Route path="*" element={<NoPage />} />
       </Routes>
     </Router>
   )

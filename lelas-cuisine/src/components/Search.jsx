@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, {useState } from 'react'
 import searchIcon from '../assets/search-icon.png'
-function Search({menuNames}) {
+function Search() {
     // remember to fetch list of food names eg chicken, for the search state
-    const [search,setSearch] = useState(
-        menuNames.length > 1 ? menuNames[Math.floor(Math.random()*menuNames.length)] : 'Search'
-    )
+    const [search,setSearch] = useState('Search')
     return (
         <label htmlFor="search" className='searchLabel'>
             <img src={searchIcon} alt="Search" width='24' height='22.34' />

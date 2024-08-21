@@ -13,6 +13,7 @@ $txt-Font1: 'Mogra'
 $txt-font2: 'Mada'
 $txt-font3: 'Kotta One'
 $txt-font4: 'Inria Sans'
+$extra-Large-heading: 40px
 $heading-size1: 25px
 $heading-size2: 20px
 $txt-size1: 17px
@@ -74,6 +75,9 @@ $txt-size3: 12px
                 a
                     text-decoration: none
                     color: $checkOut-txt-color
+                    transition: color .2s ease-in-out
+                    &:hover
+                        color: $nav-txt-focus
     .nav_extras
         margin-top: auto
         display: flex
@@ -122,6 +126,7 @@ $txt-size3: 12px
             background-repeat: no-repeat
             background-size: cover
             cursor: pointer
+            transition: .3s ease-out color
             &:hover
                 color: #fff
         .menu_loading
@@ -137,6 +142,117 @@ $txt-size3: 12px
         display: flex
         justify-content: center
         align-items: center
-        background-color: #C52A2A
         color: #fff
         font: $txt-size2 $txt-font2
+        background-color: #C52A2A
+    .subMenu
+        padding-top: 20px
+        width: 100vw
+        height: 100vh
+        display: flex
+        flex-direction: column
+        .subDishesContainer
+            display: grid
+            grid-template-columns: repeat(3, 1fr)
+            align-items: center
+            justify-items: center
+            place-content: center
+        .loading-dishes
+            background-color: #e4e4e4
+            animation-delay: 1s
+            animation-duration: 1.5s
+            .loading-dishes-box1,.loading-dishes-box2
+                margin: 20px
+                width: 310px
+                height: 200px
+                background-color: #dadada
+                animation: 1s ease-in-out infinite blink
+            .loading-dishes-box2
+                width: 200px
+                height: 20px
+                margin: 10px
+                margin-left: 20px
+        .dishCard, .loading-dishes
+            width: 350px
+            height: 300px
+            margin: 10px
+            display: flex
+            flex-direction: column
+            position: relative
+            .dishImage
+                width: flex
+                height: 250px
+                object-fit: cover
+            .dishDetails
+                height: inherit
+                display: flex
+                justify-content: space-between
+                padding: 10px
+                font: $txt-size1 $txt-font2
+                .dishPrices
+                    font: $txt-size1 $txt-font4
+                    display: flex
+                    justify-content: space-evenly
+                    width: 90px
+                    .dishOriginalPrice
+                        text-decoration-line: line-through
+                        color: $nav-txt-focus
+                .addButton
+                    width: 40px
+                    height: 40px
+                    cursor: pointer
+        button
+            width: 200px
+            height: 50px
+            border: none
+            background-color: $primary-color-logo
+            color: #fff
+            border-radius: 25px
+            margin: auto
+            font: $txt-size1 $logo-font
+            cursor: pointer
+            transition: .3s ease-out background-color, .3s ease-out color
+            &:hover
+                background-color: #fff
+                color: $primary-color-logo
+                border: 1px solid $primary-color-logo
+    .nutritious-fact_section
+        width: flex
+        height: 70vh
+        display: flex
+        justify-content: center
+        align-items: center
+        .loading-facts
+            background-color: #c2c2c2
+            border-radius: 10px
+            animation: 2.5s ease-in-out infinite blink
+            .loading-facts-box
+                width: 500px
+                height: 20px
+                background-color: #ececec
+                border-radius: 10px
+                margin: auto
+                margin-block: 30px
+                animation: 1.5s ease-in-out infinite blink
+        .facts-container, .loading-facts
+            width: 554px
+            height: 500px
+            overflow: hidden
+            h1
+                font: $extra-Large-heading $logo-font
+                color: $primary-color-logo
+                margin-block: $txt-size1
+            .facts
+                font: $heading-size2 $txt-font3
+                line-height: 60px
+            .animateFacts
+                pointer-events: none
+                animation: 1s ease-in-out scrollLeft
+            .dots
+                display: flex
+                justify-content: center
+                align-items: center
+                img
+                    margin-inline: 10px
+                    cursor: pointer
+

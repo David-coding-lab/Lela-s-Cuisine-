@@ -8,4 +8,16 @@
   100% {
     width: 25%;
   }
+}
+@keyframes scrollLeft {
+  100% {
+    color: rgba(34, 34, 34, 0.2);
+    transform: translateX(580px);
+    opacity: 0.5;
+  }
+}
+@keyframes blink {
+  100% {
+    opacity: 0.3;
+  }
 }/*# sourceMappingURL=animation.css.map */
