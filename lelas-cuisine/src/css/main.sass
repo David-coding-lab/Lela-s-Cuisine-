@@ -143,11 +143,11 @@ $txt-size3: 12px
         justify-content: center
         align-items: center
         color: #fff
-        font: $txt-size2 $txt-font2
+        font: $heading-size2 $txt-font2
         background-color: #C52A2A
     .subMenu
         padding-top: 20px
-        width: 100vw
+        width: flex
         height: 100vh
         display: flex
         flex-direction: column
@@ -157,50 +157,6 @@ $txt-size3: 12px
             align-items: center
             justify-items: center
             place-content: center
-        .loading-dishes
-            background-color: #e4e4e4
-            animation-delay: 1s
-            animation-duration: 1.5s
-            .loading-dishes-box1,.loading-dishes-box2
-                margin: 20px
-                width: 310px
-                height: 200px
-                background-color: #dadada
-                animation: 1s ease-in-out infinite blink
-            .loading-dishes-box2
-                width: 200px
-                height: 20px
-                margin: 10px
-                margin-left: 20px
-        .dishCard, .loading-dishes
-            width: 350px
-            height: 300px
-            margin: 10px
-            display: flex
-            flex-direction: column
-            position: relative
-            .dishImage
-                width: flex
-                height: 250px
-                object-fit: cover
-            .dishDetails
-                height: inherit
-                display: flex
-                justify-content: space-between
-                padding: 10px
-                font: $txt-size1 $txt-font2
-                .dishPrices
-                    font: $txt-size1 $txt-font4
-                    display: flex
-                    justify-content: space-evenly
-                    width: 90px
-                    .dishOriginalPrice
-                        text-decoration-line: line-through
-                        color: $nav-txt-focus
-                .addButton
-                    width: 40px
-                    height: 40px
-                    cursor: pointer
         button
             width: 200px
             height: 50px
@@ -216,6 +172,46 @@ $txt-size3: 12px
                 background-color: #fff
                 color: $primary-color-logo
                 border: 1px solid $primary-color-logo
+    .loading-dishes
+        background-color: #e4e4e4
+        animation-delay: 1s
+        animation-duration: 1.5s
+        .loading-dishes-box1,.loading-dishes-box2
+            margin: 20px
+            width: 310px
+            height: 200px
+            background-color: #dadada
+            animation: 1s ease-in-out infinite blink
+        .loading-dishes-box2
+            width: 200px
+            height: 20px
+            margin: 10px
+            margin-left: 20px
+    .dishCard, .loading-dishes
+        width: 350px
+        height: 300px
+        margin: 10px
+        display: flex
+        flex-direction: column
+        position: relative
+        .dishImage
+            width: flex
+            height: 250px
+            object-fit: cover
+        .dishDetails
+            height: inherit
+            display: flex
+            justify-content: space-between
+            padding: 10px
+            font: $txt-size1 $txt-font2
+            .dishPrices
+                font: $txt-size1 $txt-font4
+                display: flex
+                justify-content: space-evenly
+                width: 90px
+                .dishOriginalPrice
+                    text-decoration-line: line-through
+                    color: $nav-txt-focus
     .nutritious-fact_section
         width: flex
         height: 70vh
@@ -255,4 +251,91 @@ $txt-size3: 12px
                 img
                     margin-inline: 10px
                     cursor: pointer
-
+        .addButton
+            width: 40px
+            height: 40px
+        cursor: pointer
+    .menu-section
+        width: flex
+        height: auto
+        display: flex
+        flex-direction: column
+    .menu-list
+        width: auto
+        height: 50px
+        font-size: xx-large
+        border: none
+        outline: transparent
+        cursor: pointer
+        margin: 2% auto
+        color: $primary-color-logo
+    .menu
+        width: 100vw
+        height: auto
+        display: flex
+        padding: 20px
+        padding-left: 50px
+        flex-wrap: wrap
+    .order-section
+        width: 100vw
+        height: 100vh
+        .order-main-section
+            width: 100vw
+            height: 35vw
+            display: flex
+            align-items: center
+            justify-content: center
+            img
+                padding-left: 90px
+            .delivery-guy
+                display: flex
+                flex-direction: column
+                a
+                    align-self: flex-end
+                    button
+                        width: 200px
+                        height: 50px
+                        background-color: #5E4949
+                        border: none
+                        border-radius: 21px
+                        font: $txt-size1 $logo-font
+                        color: #fff
+                        cursor: pointer
+    .about-section
+        width: flex
+        height: 100vh
+        .about_h1
+            text-align: center
+            color: #5E4949
+            font: 56px $logo-font
+            margin-block: 15%
+    footer
+        width: flex
+        height: 231px
+        background-color: $primary-color-2
+        display: flex
+        justify-content: center
+        align-items: center
+        color: #fff
+        font-family: $txt-font4
+        div
+            display: flex
+            flex-direction: column
+            margin-right: 50px
+            margin-left: 60px
+            h3
+                font: $heading-size2 $logo-font !important
+            a
+                text-decoration: none
+                color: #fff
+                font-size: $txt-size1
+        .footer-logo-container
+            margin: auto
+            display: flex
+            align-items: center
+            width: auto
+            img
+                width: 74px
+                height: 74px
+            h1
+                font-family: $logo-font

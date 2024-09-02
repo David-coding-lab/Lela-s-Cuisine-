@@ -141,12 +141,12 @@
   justify-content: center;
   align-items: center;
   color: #fff;
-  font: 15px "Mada";
+  font: 20px "Mada";
   background-color: #C52A2A;
 }
 #root .subMenu {
   padding-top: 20px;
-  width: 100vw;
+  width: flex;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -157,60 +157,6 @@
   align-items: center;
   justify-items: center;
   place-content: center;
-}
-#root .subMenu .loading-dishes {
-  background-color: #e4e4e4;
-  animation-delay: 1s;
-  animation-duration: 1.5s;
-}
-#root .subMenu .loading-dishes .loading-dishes-box1, #root .subMenu .loading-dishes .loading-dishes-box2 {
-  margin: 20px;
-  width: 310px;
-  height: 200px;
-  background-color: #dadada;
-  animation: 1s ease-in-out infinite blink;
-}
-#root .subMenu .loading-dishes .loading-dishes-box2 {
-  width: 200px;
-  height: 20px;
-  margin: 10px;
-  margin-left: 20px;
-}
-#root .subMenu .dishCard, #root .subMenu .loading-dishes {
-  width: 350px;
-  height: 300px;
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-#root .subMenu .dishCard .dishImage, #root .subMenu .loading-dishes .dishImage {
-  width: flex;
-  height: 250px;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-#root .subMenu .dishCard .dishDetails, #root .subMenu .loading-dishes .dishDetails {
-  height: inherit;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  font: 17px "Mada";
-}
-#root .subMenu .dishCard .dishDetails .dishPrices, #root .subMenu .loading-dishes .dishDetails .dishPrices {
-  font: 17px "Inria Sans";
-  display: flex;
-  justify-content: space-evenly;
-  width: 90px;
-}
-#root .subMenu .dishCard .dishDetails .dishPrices .dishOriginalPrice, #root .subMenu .loading-dishes .dishDetails .dishPrices .dishOriginalPrice {
-  text-decoration-line: line-through;
-  color: #9B9B9B;
-}
-#root .subMenu .dishCard .dishDetails .addButton, #root .subMenu .loading-dishes .dishDetails .addButton {
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
 }
 #root .subMenu button {
   width: 200px;
@@ -229,12 +175,62 @@
   color: #DB0909;
   border: 1px solid #DB0909;
 }
+#root .loading-dishes {
+  background-color: #e4e4e4;
+  animation-delay: 1s;
+  animation-duration: 1.5s;
+}
+#root .loading-dishes .loading-dishes-box1, #root .loading-dishes .loading-dishes-box2 {
+  margin: 20px;
+  width: 310px;
+  height: 200px;
+  background-color: #dadada;
+  animation: 1s ease-in-out infinite blink;
+}
+#root .loading-dishes .loading-dishes-box2 {
+  width: 200px;
+  height: 20px;
+  margin: 10px;
+  margin-left: 20px;
+}
+#root .dishCard, #root .loading-dishes {
+  width: 350px;
+  height: 300px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+#root .dishCard .dishImage, #root .loading-dishes .dishImage {
+  width: flex;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#root .dishCard .dishDetails, #root .loading-dishes .dishDetails {
+  height: inherit;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font: 17px "Mada";
+}
+#root .dishCard .dishDetails .dishPrices, #root .loading-dishes .dishDetails .dishPrices {
+  font: 17px "Inria Sans";
+  display: flex;
+  justify-content: space-evenly;
+  width: 90px;
+}
+#root .dishCard .dishDetails .dishPrices .dishOriginalPrice, #root .loading-dishes .dishDetails .dishPrices .dishOriginalPrice {
+  text-decoration-line: line-through;
+  color: #9B9B9B;
+}
 #root .nutritious-fact_section {
   width: flex;
   height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 #root .nutritious-fact_section .loading-facts {
   background-color: #c2c2c2;
@@ -276,4 +272,110 @@
 #root .nutritious-fact_section .facts-container .dots img, #root .nutritious-fact_section .loading-facts .dots img {
   margin-inline: 10px;
   cursor: pointer;
+}
+#root .nutritious-fact_section .addButton {
+  width: 40px;
+  height: 40px;
+}
+#root .menu-section {
+  width: flex;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+#root .menu-list {
+  width: auto;
+  height: 50px;
+  font-size: xx-large;
+  border: none;
+  outline: transparent;
+  cursor: pointer;
+  margin: 2% auto;
+  color: #DB0909;
+}
+#root .menu {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  padding: 20px;
+  padding-left: 50px;
+  flex-wrap: wrap;
+}
+#root .order-section {
+  width: 100vw;
+  height: 100vh;
+}
+#root .order-section .order-main-section {
+  width: 100vw;
+  height: 35vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#root .order-section .order-main-section img {
+  padding-left: 90px;
+}
+#root .order-section .order-main-section .delivery-guy {
+  display: flex;
+  flex-direction: column;
+}
+#root .order-section .order-main-section .delivery-guy a {
+  align-self: flex-end;
+}
+#root .order-section .order-main-section .delivery-guy a button {
+  width: 200px;
+  height: 50px;
+  background-color: #5E4949;
+  border: none;
+  border-radius: 21px;
+  font: 17px "Leckerli One";
+  color: #fff;
+  cursor: pointer;
+}
+#root .about-section {
+  width: flex;
+  height: 100vh;
+}
+#root .about-section .about_h1 {
+  text-align: center;
+  color: #5E4949;
+  font: 56px "Leckerli One";
+  margin-block: 15%;
+}
+#root footer {
+  width: flex;
+  height: 231px;
+  background-color: #554A4A;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: "Inria Sans";
+}
+#root footer div {
+  display: flex;
+  flex-direction: column;
+  margin-right: 50px;
+  margin-left: 60px;
+}
+#root footer div h3 {
+  font: 20px "Leckerli One" !important;
+}
+#root footer div a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 17px;
+}
+#root footer .footer-logo-container {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  width: auto;
+}
+#root footer .footer-logo-container img {
+  width: 74px;
+  height: 74px;
+}
+#root footer .footer-logo-container h1 {
+  font-family: "Leckerli One";
 }/*# sourceMappingURL=main.css.map */

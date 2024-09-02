@@ -7,33 +7,31 @@ import man from '../assets/man.png'
 import NutritiousFacts from '../components/NutritiousFacts'
 import DishesLoading from '../components/DishesLoading'
 import LoadingFacts from '../components/LoadingFacts'
-function Home({dishesAvailable}) {
+import Footer from '../components/Footer'
+import Ads from '../components/Ads'
+export const NutritionFacts = ({loading})=>{
+  return(
+    <section className='nutritious-fact_section'>
+        <img src={man} alt="Cartoon Figure" />
+        <article className='facts-container'>
+          <h1>Nutrition Facts</h1>
+          {
+            loading ?
+            <LoadingFacts />
+            :<NutritiousFacts />
+          }
+        </article>
+      </section>
+  )
+}
+function Home({loading,setLoading,dishesAvailable,meals}) {
   const [foodMenu, setFoodMenu] = useState([])
-  const [loading,setLoading] = useState('')
-  const [menuNames, setMenuNames] = useState([])
-  const client = createClient({
-    space: 'sn9ofih1jyrk',
-    accessToken: 'xOR5f8_K3VNuZwdBAJePPYYj8iHPvIhVUipW8yYW--g'
-  })
   useEffect(()=>{
-    setLoading('true')
-    client.getEntries({
-      content_type: 'dishesSections'
-    })
-      .then(data=> {
-        setFoodMenu(shuffleArray(data.items))
-        for(const foodType of data.items){
-          setMenuNames(previous =>{return[
-            ...previous,
-            foodType.fields.dish
-          ]})
-        }
-        setTimeout(() => {
-          setLoading(false)
-        }, 2500);
-      })
-      .catch(error=> console.error(error));
-    },[])
+    meals && setLoading(false)
+    setTimeout(() => {
+      setFoodMenu(meals)
+    }, 2500);
+    },[meals])
     useEffect(()=>{
       setTimeout(() => {
         setDisplayDishes(dishesAvailable.slice(0,6))
@@ -67,7 +65,7 @@ function Home({dishesAvailable}) {
   shuffleArray(displayDishes)
   return (
     <div>
-        <Nav menuNames={menuNames[Math.floor(Math.random()*menuNames.length)]}/>
+        <Nav />
         <section className="carousel">
             {
               loading ?[
@@ -86,24 +84,20 @@ function Home({dishesAvailable}) {
               ))
             }
         </section>
-        <div className="ads">
-          <h1>2% 0ff on all sales</h1>
-        </div>
+            <Ads />
         <section className="subMenu">
           <div className="subDishesContainer">
             {
-            loading ?
+              loading ?
               [
-                <DishesLoading key={1}/>,
-                <DishesLoading key={2}/>,
-                <DishesLoading key={3}/>,
-                <DishesLoading key={4}/>,
-                <DishesLoading key={5}/>,
-                <DishesLoading key={6}/>
-              ]
-            :dishesAvailable.length > 1 &&
-            <>
-              {displayDishes.map(dish =>((
+                <DishesLoading key={Math.random()}/>,
+                <DishesLoading key={Math.random()}/>,
+                <DishesLoading key={Math.random()}/>,
+                <DishesLoading key={Math.random()}/>,
+                <DishesLoading key={Math.random()}/>,
+                <DishesLoading key={Math.random()}/>
+              ]:
+              displayDishes.map(dish =>((
                 <Dish
                   dishName={dish.fields.dishName}
                   dishPrice={dish.fields.dishPrice}
@@ -112,8 +106,6 @@ function Home({dishesAvailable}) {
                   key={dish.sys.id}
                 />
               )))}
-            </>
-          }
           </div>
           {
             !loading &&
@@ -122,19 +114,9 @@ function Home({dishesAvailable}) {
               </a>
           }
         </section>
-        <section className='nutritious-fact_section'>
-          <img src={man} alt="Cartoon Figure" />
-          <article className='facts-container'>
-            <h1>Nutrition Facts</h1>
-            {
-              loading ?
-              <LoadingFacts />
-              :<NutritiousFacts />
-            }
-          </article>
-        </section>
+        <NutritionFacts loading={loading}/>
+        <Footer />
     </div>
   )
 }
-
 export default Home

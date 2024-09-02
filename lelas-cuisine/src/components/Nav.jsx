@@ -3,10 +3,10 @@ import Search from './Search'
 import Logo from '../assets/chef-hat.png'
 import userAccountIcon from '../assets/account-icon.png'
 
-function Nav({menuNames}) {
+function Nav() {
   return (
     <nav>
-        <Search menuNames={menuNames}/>
+        <Search />
         <div className='logo_links'>
             <span className="Logo">
                 <a href="/">
