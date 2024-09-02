@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Ads from '../components/Ads'
 import Nav from '../components/Nav'
 import Dish from '../components/Dish'
@@ -11,6 +11,7 @@ function Menu({meals}) {
   const [loading,setLoading] = useState(true)
   const [currentDishType,setCurrentDishType] = useState('')
   const [currentDishes,setCurrentDishes] = useState([])
+  const ref = useRef(null)
   const client = createClient({
     space: 'sn9ofih1jyrk',
     accessToken: 'FxI331m4SJx0yBZxX4ZXssXqpo47N7jcX3TWZcpo8fc'
@@ -22,7 +23,7 @@ function Menu({meals}) {
     setLoading(true)
     currentDishType && setTimeout(() => {
       client.getEntries({
-        content_type: currentDishType
+        content_type: currentDishType.replaceAll(' ', '')
       })
         .then(data => {
           setCurrentDishes(data)
@@ -32,9 +33,12 @@ function Menu({meals}) {
         })
         .catch(err => console.error(err))
     }, 3000);
-  },[client, currentDishType])
-  console.log(currentDishes,currentDishType);
-  
+  },[currentDishType])
+  !loading && setTimeout(() => {
+    ref.current.addEventListener('click', function setDishName(){
+      setCurrentDishType(ref.current.value)
+    })
+  }, 3000);
   return (
     <>
       <Nav />
@@ -42,7 +46,7 @@ function Menu({meals}) {
         <Ads />
 
 
-        {meals.length > 0 && <select style={{fontFamily: 'Leckerli One'}} name='Menu' className='menu-list'>
+        {meals.length > 0 && <select ref={ref} style={{fontFamily: 'Leckerli One'}} name='Menu' className='menu-list' id='currentDishType'>
           {meals.map((mealName,index) =>((
             <option style={{fontFamily: 'Mada'}} value={mealName.fields.dish} key={index}>{mealName.fields.dish}</option>
           )))}
