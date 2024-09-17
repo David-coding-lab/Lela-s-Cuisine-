@@ -10,6 +10,7 @@
   justify-content: space-between;
   padding: 21px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  position: relative;
 }
 #root .searchLabel {
   width: 150px;
@@ -72,6 +73,7 @@
   display: flex;
   justify-content: end;
   align-items: center;
+  gap: 10px;
 }
 #root .nav_extras a {
   margin-right: 30px;
@@ -203,7 +205,7 @@
 }
 #root .dishCard .dishImage, #root .loading-dishes .dishImage {
   width: flex;
-  height: 250px;
+  height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -230,7 +232,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
 }
 #root .nutritious-fact_section .loading-facts {
   background-color: #c2c2c2;
@@ -273,9 +274,10 @@
   margin-inline: 10px;
   cursor: pointer;
 }
-#root .nutritious-fact_section .addButton {
+#root .addButton {
   width: 40px;
   height: 40px;
+  cursor: pointer;
 }
 #root .menu-section {
   width: flex;
@@ -331,6 +333,12 @@
   font: 17px "Leckerli One";
   color: #fff;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+#root .order-section .order-main-section .delivery-guy a button:hover {
+  background-color: #fff;
+  border: 1px solid #5E4949;
+  color: #5E4949;
 }
 #root .about-section {
   width: flex;
@@ -341,6 +349,113 @@
   color: #5E4949;
   font: 56px "Leckerli One";
   margin-block: 15%;
+}
+#root .reservation-section {
+  width: flex;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 180px;
+  justify-content: space-between;
+}
+#root .reservation-section .reserve_left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 80vh;
+  font: 25px "Leckerli One";
+  color: #554A4A;
+}
+#root .reservation-section .reserve_right {
+  width: 500px;
+  height: 460px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(199, 199, 199, 0.26);
+}
+#root .reservation-section .reserve_right .form {
+  width: 384px;
+  height: 450px;
+}
+#root .reservation-section .reserve_right .form input {
+  width: 374px;
+  border: none;
+  margin-top: 30px;
+  border-bottom: 1px solid #554A4A;
+  padding-bottom: 30px;
+  font: 12px "Mogra";
+  color: #554A4A;
+  background-color: transparent;
+  outline: transparent;
+}
+#root .reservation-section .reserve_right .location {
+  margin-top: 30px;
+}
+#root .reservation-section .reserve_right .location .label1 {
+  display: flex;
+  flex-direction: column;
+  font: 12px "Mogra";
+}
+#root .reservation-section .reserve_right .location .town {
+  margin-top: 30px;
+  font: 12px "Mogra";
+  background-color: transparent;
+  outline: transparent;
+  border: none;
+  width: 100%;
+}
+#root .reservation-section .reserve_right .book-reservation-btn {
+  margin-top: 20px;
+  color: white;
+  width: 150px;
+  height: 50px;
+  border: none;
+  outline: transparent;
+  background-color: #554A4A;
+  border-radius: 17px;
+  transition: 0.3s ease-out background-color, 0.3s ease-out color;
+  cursor: pointer;
+}
+#root .reservation-section .reserve_right .book-reservation-btn:hover {
+  background-color: inherit;
+  border: 1px solid #5E4949;
+  color: #5E4949;
+}
+#root .user {
+  margin: 30px;
+  margin-left: auto;
+  margin-top: 150px;
+  position: absolute;
+  background-color: #554A4A;
+  z-index: 99;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+}
+#root .user .content {
+  width: 350px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 57px;
+  align-items: center;
+}
+#root .user .content a {
+  color: #fff;
+  text-decoration: none;
+  font: 17px "Inria Sans";
+}
+#root .user button {
+  background-color: transparent;
+  border: none;
+  margin: 10px;
+  cursor: pointer;
 }
 #root footer {
   width: flex;

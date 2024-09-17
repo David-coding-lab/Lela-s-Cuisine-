@@ -1,6 +1,6 @@
 import React from 'react'
 import plusIcon from '../assets/plus-btn.png'
-function Dish({dishName,dishPrice,dishImage,discountPrice}) {
+function Dish({addFoodToCart,dishName,dishPrice,dishImage,discountPrice}) {
   return (
     <div className='dishCard'>
         <svg width="39" height="37" style={{
@@ -16,7 +16,9 @@ function Dish({dishName,dishPrice,dishImage,discountPrice}) {
             <p>{dishName}</p>
             <p className='dishPrices'><strong>{discountPrice}</strong> <span className='dishOriginalPrice'>{dishPrice}</span></p>
           </div>
-          <img className='addButton' src={plusIcon} alt="Add Food to Cart" />
+          <img className='addButton' src={plusIcon} alt="Add Food to Cart"
+            onClick={()=> addFoodToCart(dishName,dishPrice,dishImage)}
+          />
         </span>
     </div>
   )

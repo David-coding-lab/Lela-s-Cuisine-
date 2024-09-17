@@ -1,4 +1,3 @@
-
 function Ads() {
     return (
         <div className="ads">

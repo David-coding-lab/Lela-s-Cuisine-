@@ -31,6 +31,7 @@ $txt-size3: 12px
         justify-content: space-between
         padding: 21px
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04)
+        position: relative
     .searchLabel
         width: 150px
         height: 20px
@@ -83,6 +84,7 @@ $txt-size3: 12px
         display: flex
         justify-content: end
         align-items: center
+        gap: 10px
         a
             margin-right: 30px
             text-decoration: none
@@ -196,7 +198,7 @@ $txt-size3: 12px
         position: relative
         .dishImage
             width: flex
-            height: 250px
+            height: 200px
             object-fit: cover
         .dishDetails
             height: inherit
@@ -251,9 +253,9 @@ $txt-size3: 12px
                 img
                     margin-inline: 10px
                     cursor: pointer
-        .addButton
-            width: 40px
-            height: 40px
+    .addButton
+        width: 40px
+        height: 40px
         cursor: pointer
     .menu-section
         width: flex
@@ -301,6 +303,11 @@ $txt-size3: 12px
                         font: $txt-size1 $logo-font
                         color: #fff
                         cursor: pointer
+                        transition: all .3s ease-in-out
+                        &:hover
+                            background-color: #fff
+                            border: 1px solid #5E4949
+                            color: #5E4949
     .about-section
         width: flex
         height: 100vh
@@ -309,6 +316,99 @@ $txt-size3: 12px
             color: #5E4949
             font: 56px $logo-font
             margin-block: 15%
+    .reservation-section
+        width: flex
+        height: 100vh
+        display: flex
+        justify-content: center
+        align-items: center
+        padding-inline: 180px
+        justify-content: space-between
+        .reserve_left
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            justify-content: space-evenly
+            height: 80vh
+            font: $heading-size1 $logo-font
+            color: $primary-color-2
+        .reserve_right
+            width: 500px
+            height: 460px
+            padding-bottom: 20px
+            display: flex
+            justify-content: center
+            flex-direction: column
+            align-items: center
+            background-color: rgba(199, 199, 199, 0.26)
+            .form
+                width: 384px
+                height: 450px
+                input
+                    width: 374px
+                    border: none
+                    margin-top: 30px
+                    border-bottom: 1px solid $primary-color-2
+                    padding-bottom: 30px
+                    font: $txt-size3 $txt-Font1
+                    color: $primary-color-2
+                    background-color: transparent
+                    outline: transparent
+            .location
+                margin-top: 30px
+                .label1
+                    display: flex
+                    flex-direction: column
+                    font: $txt-size3 $txt-Font1
+                .town
+                    margin-top: 30px
+                    font: $txt-size3 $txt-Font1
+                    background-color: transparent
+                    outline: transparent
+                    border: none
+                    width: 100%
+            .book-reservation-btn
+                margin-top: 20px
+                color: white
+                width: 150px
+                height: 50px
+                border: none
+                outline: transparent
+                background-color: $primary-color-2
+                border-radius: 17px
+                transition: .3s ease-out background-color, .3s ease-out color
+                cursor: pointer
+                &:hover
+                    background-color: inherit
+                    border: 1px solid #5E4949
+                    color: #5E4949
+    .user
+        margin: 30px
+        margin-left: auto
+        margin-top: 150px
+        position: absolute
+        background-color: $primary-color-2
+        z-index: 99
+        outline: none
+        border: none
+        border-radius: 10px
+        .content
+            width: 350px
+            height: 400px
+            display: flex
+            flex-direction: column
+            gap: 57px
+            align-items: center
+            a
+                color: #fff
+                text-decoration: none
+                font: $txt-size1 $txt-font4
+        button
+            background-color: transparent
+            border: none
+            margin: 10px
+            cursor: pointer
     footer
         width: flex
         height: 231px

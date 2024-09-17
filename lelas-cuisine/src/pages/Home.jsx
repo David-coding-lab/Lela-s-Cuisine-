@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import Nav from '../components/Nav'
-import {createClient} from 'contentful'
 import logo from '../assets/chef-hat.png'
 import Dish from '../components/Dish'
 import man from '../assets/man.png'
@@ -24,7 +23,29 @@ export const NutritionFacts = ({loading})=>{
       </section>
   )
 }
-function Home({loading,setLoading,dishesAvailable,meals}) {
+function setDishTypeLocally(foodType){
+  localStorage.setItem('foodType', JSON.stringify(foodType))
+  window.location.href = '/Menu'
+}
+// menu Component
+export const Menu = ({foodType,fooImage})=>{
+  return(
+    <button className='foodMenu'
+    style={{
+      backgroundImage: `
+      linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),
+      url(${fooImage})`
+    }}
+    onClick={()=> setDishTypeLocally(foodType)}
+    >{foodType}
+    </button>
+  )
+}
+export const openOrCloseUser = (closeOrOpen) =>{
+  document.querySelector('.user').open = closeOrOpen === 'open'
+    ? true : false
+}
+function Home({setCart,addFoodToCart,loading,setLoading,dishesAvailable,meals,}) {
   const [foodMenu, setFoodMenu] = useState([])
   useEffect(()=>{
     meals && setLoading(false)
@@ -37,16 +58,6 @@ function Home({loading,setLoading,dishesAvailable,meals}) {
         setDisplayDishes(dishesAvailable.slice(0,6))
       }, 2000);
     },[dishesAvailable])
-    // menu Component
-  const Menu = ({foodType,fooImage})=>{
-    return(
-      <button className='foodMenu' style={{
-        backgroundImage: `
-        linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),
-        url(${fooImage})`
-      }}>{foodType}</button>
-    )
-  }
   const MenuLoading = ()=>{
     return(
       <button className='foodMenu menu_loading'>
@@ -62,10 +73,9 @@ function Home({loading,setLoading,dishesAvailable,meals}) {
       return array
     }
   };
-  shuffleArray(displayDishes)
   return (
     <div>
-        <Nav />
+        <Nav openOrCloseUser={openOrCloseUser}/>
         <section className="carousel">
             {
               loading ?[
@@ -103,6 +113,8 @@ function Home({loading,setLoading,dishesAvailable,meals}) {
                   dishPrice={dish.fields.dishPrice}
                   dishImage={dish.fields.dishImage.fields.file.url}
                   discountPrice={dish.fields.dishDiscountPrice}
+                  setCart={setCart}
+                  addFoodToCart={addFoodToCart}
                   key={dish.sys.id}
                 />
               )))}

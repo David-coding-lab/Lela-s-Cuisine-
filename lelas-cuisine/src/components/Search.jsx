@@ -4,7 +4,7 @@ function Search() {
     // remember to fetch list of food names eg chicken, for the search state
     const [search,setSearch] = useState('Search')
     return (
-        <label htmlFor="search" className='searchLabel'>
+        <label htmlFor="Search" className='searchLabel'>
             <img src={searchIcon} alt="Search" width='24' height='22.34' />
             <input
                 type="text"
