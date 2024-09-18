@@ -457,6 +457,93 @@
   margin: 10px;
   cursor: pointer;
 }
+#root .checkout-section {
+  display: flex;
+  width: flex;
+  height: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#root .checkout-section h1 {
+  margin-bottom: 40px;
+  margin-top: 30px;
+  font: 25px "Mogra";
+  color: #6E6E6E;
+}
+#root .checkout-section .checkout-items {
+  width: 1402px;
+  height: 100px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: rgba(155, 155, 155, 0.18);
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  padding: 10px;
+}
+#root .checkout-section .checkout-items img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 80px;
+  height: 80px;
+  margin: 4px 40px 4px 8px;
+  border-radius: 50%;
+}
+#root .checkout-section .checkout-items .foodName {
+  font: 20px "Mogra";
+  color: #777777;
+  width: 300px;
+}
+#root .checkout-section .checkout-items .Btn-container {
+  width: 300px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+#root .checkout-section .checkout-items .Btn-container .food-Count {
+  font: 17px "Inria Sans";
+  font-weight: 600;
+  color: #554A4A;
+}
+#root .checkout-section .checkout-items .Btn-container button {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  outline: #00A3FF;
+  border: none;
+}
+#root .checkout-section .checkout-items .Btn-container button img {
+  width: 30px;
+  height: 30px;
+  margin: 0;
+}
+#root .checkout-section .checkout-items label {
+  font: 17px "Inria Sans";
+  color: #554A4A;
+  font-weight: bolder;
+  margin-right: 10px;
+}
+#root .checkout-section .checkout-items input {
+  color: #554A4A;
+  background-color: #554A4A;
+  font-size: 500px;
+  margin-right: 50px;
+}
+#root .checkout-section .checkout-items select {
+  width: 200px;
+  margin-right: auto;
+  outline-color: #00A3FF;
+  color: #554A4A;
+}
+#root .checkout-section .checkout-items .checkout-food-price {
+  font: 20px "Inria Sans";
+  color: #DB0909;
+}
 #root footer {
   width: flex;
   height: 231px;

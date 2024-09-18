@@ -4,7 +4,7 @@ import dot from '../assets/dot.png'
 function NutritiousFacts() {
   const [facts,setFacts] = useState([])
   const [currentFactCount,setCurrentFactCount] = useState(0)
-  const [locallyStoredFacts]= useState(localStorage.getItem('localFact'))
+  const [locallyStoredFacts]= useState(sessionStorage.getItem('localFact'))
   const randomNumber = (number) => ((Math.floor(Math.random() * number)))
   const fact = useRef()
   const client = createClient({
@@ -34,7 +34,7 @@ function NutritiousFacts() {
             item.fields.facts.content[0].content[0].value
           ]))
         })
-        localStorage.setItem('localFact', JSON.stringify(data.items))
+        sessionStorage.setItem('localFact', JSON.stringify(data.items))
       })
     .catch(error => console.error(error))
   },[])

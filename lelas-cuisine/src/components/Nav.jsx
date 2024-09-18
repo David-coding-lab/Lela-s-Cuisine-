@@ -6,7 +6,7 @@ import cartIcon from '../assets/cart basket.svg'
 import closeBtn from '../assets/close.svg'
 
 function Nav({openOrCloseUser}) {
-    const [cart] = useState(JSON.parse(localStorage.getItem('cart')))
+    const [cart] = useState(JSON.parse(sessionStorage.getItem('cart')))
     return (
         <nav>
             <dialog className='user' >

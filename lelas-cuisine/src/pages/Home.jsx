@@ -24,7 +24,7 @@ export const NutritionFacts = ({loading})=>{
   )
 }
 function setDishTypeLocally(foodType){
-  localStorage.setItem('foodType', JSON.stringify(foodType))
+  sessionStorage.setItem('foodType', JSON.stringify(foodType))
   window.location.href = '/Menu'
 }
 // menu Component

@@ -11,7 +11,7 @@ function Menu({meals,cart}) {
   const [loading,setLoading] = useState(true)
   const [currentDishType,setCurrentDishType] = useState('')
   const [currentDishes,setCurrentDishes] = useState([])
-  const [locallyStoredDishType] = useState(JSON.parse(localStorage.getItem('foodType')))
+  const [locallyStoredDishType] = useState(JSON.parse(sessionStorage.getItem('foodType')))
   const ref = useRef(null)
   const client = createClient({
     space: 'sn9ofih1jyrk',
